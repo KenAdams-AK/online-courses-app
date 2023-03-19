@@ -34,8 +34,6 @@ export default function CourseContainer(props: Props) {
 		setVideosProgressStorageLS(videosProgresStorage);
 	}, [videosProgresStorage]);
 
-	console.log({ course });
-
 	return (
 		<>
 			<div className="CourseContainer">

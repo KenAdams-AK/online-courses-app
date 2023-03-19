@@ -29,8 +29,6 @@ export default function CourseDetailsPage() {
 			TIME_TO_LIVE.currentCourse
 		);
 
-	console.log({ courseDetails });
-
 	useEffect(() => {
 		if (!id) return;
 		if (id === currentCourseLS?.id) {

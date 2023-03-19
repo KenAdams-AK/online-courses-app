@@ -49,8 +49,6 @@ export default function LessonContainer(props: Props) {
 		dispatch(updateVideosProgressStorage(newVideoProgress));
 	}, []);
 
-	console.log({ currentVideoProgress });
-
 	const lessonDesc = (
 		<div className="LessonContainer__desc">
 			<div className="LessonContainer__number">Lesson &#x23;{lesson.order}</div>
