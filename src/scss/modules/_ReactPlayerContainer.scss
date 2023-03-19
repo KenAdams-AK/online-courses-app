@@ -1,0 +1,13 @@
+.ReactPlayerContainer {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+	overflow: hidden;
+
+	&__react-player {
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}

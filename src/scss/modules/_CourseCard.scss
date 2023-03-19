@@ -1,0 +1,74 @@
+.CourseCard {
+	&__link {
+		display: flex;
+		flex-direction: column;
+		color: $color-black-primary;
+	}
+
+	&__card {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		box-shadow: $box-shadow-card;
+		border-bottom-left-radius: 0.3125rem;
+		border-bottom-right-radius: 0.3125rem;
+
+		.media {
+			position: relative;
+			width: 100%;
+			transition: transform ease 0.45s;
+			border-top-left-radius: 0.3125rem;
+			border-top-right-radius: 0.3125rem;
+			overflow: hidden;
+
+			&__image-wrapper {
+				position: relative;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				padding-top: 56.25%;
+			}
+
+			&__image {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				object-fit: cover;
+				z-index: 2;
+			}
+
+			&__video-wrapper {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			&:hover {
+				transform: scale(1.05);
+				border-radius: 0;
+			}
+		}
+
+		.desc {
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
+			padding: 0.625rem;
+
+			.skills {
+				flex-grow: 1;
+
+				&__item {
+					margin-left: 10px;
+				}
+			}
+
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+}

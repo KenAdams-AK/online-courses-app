@@ -1,0 +1,39 @@
+.ErrorBoundary {
+	&__container {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		max-width: 19.375rem;
+		background-color: $color-grey-light;
+		box-shadow: $box-shadow-card;
+		border-radius: 5px;
+		padding: 2rem;
+	}
+
+	&__title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	&__button {
+		display: block;
+		padding: 1rem;
+		color: $color-white;
+		background-color: $color-grey;
+		border-radius: 5px;
+		margin: 0 auto;
+		transition: scale ease 0.3s;
+
+		&:not(:last-of-type) {
+			margin-bottom: 0.625rem;
+		}
+
+		&:hover {
+			scale: 1.03;
+		}
+	}
+}

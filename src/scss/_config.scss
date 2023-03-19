@@ -1,0 +1,45 @@
+$color-white: hsla(0, 0%, 100%, 1);
+$color-black: hsla(0, 0%, 0%, 1);
+$color-black-primary: hsla(207, 72%, 11%, 1);
+$color-grey: hsla(218, 12%, 49%, 1);
+$color-grey-primary: hsla(240, 2%, 57%, 1);
+$color-grey-light: rgb(242, 242, 247);
+$color-red-primary: rgb(233, 33, 33);
+$color-green-primary: hsl(120, 39%, 54%);
+$color-blue-primary: hsl(208, 97%, 47%);
+$color-blue-secondary: hsl(225, 71%, 38%);
+
+$box-shadow-card: 0px 1px 5px rgba(0, 0, 0, 0.2),
+	0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+
+@mixin background {
+	background: #70e1f5; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#ffd194,
+		#70e1f5
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#ffd194,
+		#70e1f5
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 0.875rem;
+	color: $color-black-primary;
+	@include background;
+}
+
+[class*="__container"] {
+	max-width: 90rem;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
+	margin: 0 auto;
+}
+
+.modal-active {
+	overflow: hidden;
+}

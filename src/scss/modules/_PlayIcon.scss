@@ -1,0 +1,20 @@
+.PlayIcon__shadow {
+	background: radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.55) 60%);
+	border-radius: 100%;
+	width: 4rem;
+	height: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.PlayIcon__icon {
+	border-style: solid;
+	border-width: 16px 0px 16px 26px;
+	border-color: transparent transparent transparent white;
+	margin-left: 7px;
+}

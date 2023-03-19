@@ -1,0 +1,21 @@
+@import "_reset.scss";
+@import "_config.scss";
+
+@import "./modules/_CoursesPreviewPage.scss";
+@import "./modules/_CourseDetailsPage.scss";
+
+@import "./modules/_CoursesList.scss";
+@import "./modules/_CourseCard.scss";
+@import "./modules/_Pagination.scss";
+@import "./modules/_ReactPlayerContainer.scss";
+@import "./modules/_CourseContainer.scss";
+@import "./modules/_LessonsList.scss";
+@import "./modules/_LessonContainer.scss";
+
+@import "./modules/_PlayIcon.scss";
+@import "./modules/_OverlayFallback.scss";
+
+@import "./modules/_ErrorBoundary.scss";
+@import "./modules/_ErrorContainer.scss";
+@import "./modules/_LoaderFallback.scss";
+@import "./modules/_Modal.scss";
