@@ -3,7 +3,7 @@
 
 ### The application consists of two pages:
 - Preview courses page - which represents list of courses;
-- Course details page - which represents the course details and lists of lessons.
+- Course details page - which represents the course details and list of lessons.
 
 By using react-router-dom implemented navigation between pages and redirecting.
 
