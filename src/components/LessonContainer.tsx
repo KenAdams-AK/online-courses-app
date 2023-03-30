@@ -4,8 +4,8 @@ import OverlayFallback from "./OverlayFallback";
 import Modal from "./Modal";
 import { Lesson } from "../models/courseDetailsModel";
 import { imageErrorHandler } from "../helpers/imageErroHandler";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../redux/store";
+import { memo, useCallback, useRef, useState } from "react";
+import { useAppDispatch } from "../redux/store";
 import {
 	IVideoProgress,
 	updateVideosProgressStorage,
@@ -14,26 +14,16 @@ import {
 type Props = {
 	lesson: Lesson;
 	isFirstLesson?: boolean;
+	currentVideoProgress: number;
 };
 
-export default function LessonContainer(props: Props) {
-	const { lesson, isFirstLesson } = props;
+function LessonContainer(props: Props) {
+	const { lesson, isFirstLesson, currentVideoProgress } = props;
 	const dispatch = useAppDispatch();
-	const { videosProgresStorage } = useAppSelector(
-		(state) => state.videosProgress
-	);
 	const [openModal, setOpenModal] = useState<boolean>(false);
-	const [currentVideoProgress, setCurrentVideoProgress] = useState<number>(0);
 	const playedSeconds = useRef<number>(0);
 	const previewImageLink = `${lesson.previewImageLink}/lesson-${lesson.order}.webp`;
 	const isLocked = lesson.status === "locked";
-
-	useEffect(() => {
-		if (!openModal) return;
-		if (videosProgresStorage != null) {
-			setCurrentVideoProgress(videosProgresStorage[lesson.id]);
-		}
-	}, [openModal]);
 
 	const handleOpenModal = useCallback(() => {
 		if (isLocked || !lesson.link) return;
@@ -97,3 +87,11 @@ export default function LessonContainer(props: Props) {
 		</>
 	);
 }
+
+function areEqual(prevProps: Props, nextProps: Props): boolean {
+	return prevProps.currentVideoProgress !== nextProps.currentVideoProgress
+		? false
+		: true;
+}
+
+export default memo(LessonContainer, areEqual);

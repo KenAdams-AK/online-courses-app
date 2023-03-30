@@ -39,7 +39,15 @@ export default function CourseContainer(props: Props) {
 			<div className="CourseContainer">
 				<h1 className="CourseContainer__title">{course.title}</h1>
 				<p className="CourseContainer__desc">{course.description}</p>
-				<LessonContainer lesson={firstLesson} isFirstLesson={true} />
+				<LessonContainer
+					lesson={firstLesson}
+					isFirstLesson={true}
+					currentVideoProgress={
+						videosProgresStorage != null
+							? videosProgresStorage[firstLesson.id]
+							: 0
+					}
+				/>
 				<LessonsList lessons={course.lessons} />
 			</div>
 		</>
