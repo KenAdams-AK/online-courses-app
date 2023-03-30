@@ -8,7 +8,15 @@ export default function App() {
 	return (
 		<ScrollToTop>
 			<Routes>
-				<Route index element={<CoursesPreviewPage />} />
+				<Route
+					path={DOMRouts.COURSES_PREVIEW_PAGE_HOME}
+					element={<CoursesPreviewPage />}
+				>
+					<Route
+						path={DOMRouts.COURSES_PREVIEW_PAGE_PAGINATED}
+						element={<CoursesPreviewPage />}
+					/>
+				</Route>
 				<Route
 					path={DOMRouts.COURSE_DETAILS_PAGE}
 					element={<CourseDetailsPage />}
